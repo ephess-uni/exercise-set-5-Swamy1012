@@ -24,12 +24,12 @@ if __name__ == "__main__":
     # Complete the data processing steps using numpy here.
 
     # Save the output to OUTFILE using numpy routines.
-    raw_data = np.loadtxt(INFILE)
+    raw_data1 = np.loadtxt(INFILE)
 
-    raw_data1 -= raw_data.mean()
+    raw_data1 -= raw_data1.mean()
     
-    std_=raw_data.std()
+    std_=raw_data1.std()
     
-    processed=raw_data1/std_
+    pd=raw_data1/std_
     os.makedirs(root_dir / "outputs", exist_ok=True)
-    np.savetxt(OUTFILE, processed, fmt='%.2e')
+    np.savetxt(OUTFILE, pd, fmt='%.2e')
